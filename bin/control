@@ -1,18 +1,18 @@
 #!/bin/bash
 
 function start() {
-	if [ -d "$OPENSHIFT_DATADOG_DIR/dd-agent" ]
+	if [ -d "$OPENSHIFT_DATADOG_DIR" ]
 	then
 		printf "Starting the agent...\n"
-		$OPENSHIFT_DATADOG_DIR/dd-agent/bin/agent start > /dev/null 2>&1 &
+		$OPENSHIFT_DATADOG_DIR/bin/agent start > /dev/null 2>&1 &
 	fi
 }
 
 function stop() {
-	if [ -d "$OPENSHIFT_DATADOG_DIR/dd-agent/" ]
+	if [ -d "$OPENSHIFT_DATADOG_DIR" ]
 	then
 		printf "Stopping the agent...\n"
-		PIDFILE=$OPENSHIFT_DATADOG_DIR/dd-agent/supervisord/supervisord.pid
+		PIDFILE=$OPENSHIFT_DATADOG_DIR/supervisord/supervisord.pid
 		if [ -f $PIDFILE ]
 		then
 			kill -TERM `cat $PIDFILE`
@@ -21,20 +21,20 @@ function stop() {
 }
 
 function status {
-	if [ -d "$OPENSHIFT_DATADOG_DIR/dd-agent/" ]
-	then $OPENSHIFT_DATADOG_DIR/dd-agent/bin/agent status
+	if [ -d "$OPENSHIFT_DATADOG_DIR" ]
+	then $OPENSHIFT_DATADOG_DIR/bin/agent status
 	fi
 }
 
 function restart() {
-	if [ -d "$OPENSHIFT_DATADOG_DIR/dd-agent/" ]
-	then $OPENSHIFT_DATADOG_DIR/dd-agent/bin/agent restart
+	if [ -d "$OPENSHIFT_DATADOG_DIR" ]
+	then $OPENSHIFT_DATADOG_DIR/bin/agent restart
 	fi
 }
 
 function info() {
-	if [ -d "$OPENSHIFT_DATADOG_DIR/dd-agent/" ]
-	then $OPENSHIFT_DATADOG_DIR/dd-agent/bin/info
+	if [ -d "$OPENSHIFT_DATADOG_DIR" ]
+	then $OPENSHIFT_DATADOG_DIR/bin/info
 	fi
 }
 
