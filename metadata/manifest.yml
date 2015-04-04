@@ -28,3 +28,4 @@ Endpoints:
   - Private-IP-Name:   IP
     Private-Port-Name: DOGSTATSD_PORT
     Private-Port:      8125
+Source-Url: https://github.com/aquabindi/datadog-openshift/archive/master.zip
