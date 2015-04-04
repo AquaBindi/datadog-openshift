@@ -1,4 +1,5 @@
 #!/bin/bash
+source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
 function start() {
 	if [ -d "$OPENSHIFT_DATADOG_DIR" ]
@@ -22,7 +23,14 @@ function stop() {
 
 function status {
 	if [ -d "$OPENSHIFT_DATADOG_DIR" ]
-	then $OPENSHIFT_DATADOG_DIR/bin/agent status
+	then
+		$OPENSHIFT_DATADOG_DIR/bin/agent status
+		if [ $? -eq 0 ]
+		then
+			client_result "Datadog agent is running"
+		else
+			client_result "Datadog agent is stopped"
+		fi
 	fi
 }
 
