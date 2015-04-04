@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# reset default path
+export PATH=/bin:/usr/bin:/usr/sbin
+
 apikey="$DATADOG_API_KEY"
 dd_home="$OPENSHIFT_DATADOG_DIR"
 
