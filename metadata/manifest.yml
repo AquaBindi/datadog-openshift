@@ -12,14 +12,12 @@ Categories:
   - embedded
   - plugin
 Provides:
-  - datadog
   - dd-agent-5.2.2
-  - "dd-agent"
-  - "dd-agent (version = 5.2.2)"
+  - dd-agent
 Group-Overrides:
   - components:
     - web_framework
-    - datadog
+    - dd-agent-5.2.2
 Scaling:
   Min: 1
   Max: -1
