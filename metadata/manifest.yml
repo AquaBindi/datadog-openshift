@@ -1,19 +1,20 @@
 Name: dd-agent
 Cartridge-Short-Name: DATADOG
-Display-Name: Datadog Agent 5.2.2
+Display-Name: Datadog Agent
 Version: "5.2.2"
 Versions: ["5.2.2"]
 Website: https://github.com/DataDog/datadog-openshift
 Cartridge-Version: 0.0.3
 Cartridge-Vendor: datadog
-Vendor: Datadog
-Licence: BSD license
+License: BSD license
 Categories:
   - embedded
   - plugin
 Provides:
   - dd-agent-5.2.2
   - dd-agent
+Publishes:
+Subscribes:
 Group-Overrides:
   - components:
     - web_framework
