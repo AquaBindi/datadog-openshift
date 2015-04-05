@@ -9,7 +9,7 @@ dd_home="$OPENSHIFT_DATADOG_DIR"
 if [ $apikey ]; then
 
 	# Install the DD agent from source
-	DD_API_KEY=$apikey DD_HOME=$dd_home DD_START_AGENT=0 IS_OPENSHIFT=1 sh -c "$(curl -L https://raw.githubusercontent.com/AquaBindi/dd-agent/master/packaging/datadog-agent/source/setup_agent.sh)"
+	DD_API_KEY=$apikey DD_HOME=${dd_home%/} DD_START_AGENT=0 IS_OPENSHIFT=1 sh -c "$(curl -L https://raw.githubusercontent.com/AquaBindi/dd-agent/master/packaging/datadog-agent/source/setup_agent.sh)"
 
 	# Set and uncomment bind_host parameter
 	sed -i "s/# bind_host:.*/bind_host: $OPENSHIFT_DATADOG_IP/" $dd_home/agent/datadog.conf
