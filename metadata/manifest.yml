@@ -1,4 +1,4 @@
-Name: datadog
+Name: dd-agent
 Cartridge-Short-Name: DATADOG
 Display-Name: Datadog Agent 5.2.2
 Version: "5.2.2"
